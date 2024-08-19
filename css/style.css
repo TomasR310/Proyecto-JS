@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200..800&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Kanit';
+}
+
+header {
+background-color: #333;
+color: #ffffff;
+padding: 1rem;
+text-align: center;
+}
+
+nav ul {
+display: flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+gap: 50px ;
+}
+
+a {
+color: #ffffff;
+text-decoration: none;
+}
+
+main {
+padding: 2rem;
+}
+
+.container {
+margin-bottom: 2vh;
+}
+
+footer {
+background-color: #333;
+color: #ffffff;
+text-align: center;
+padding: 1rem;
+width: 100%;
+bottom: 0;
+position: fixed;
+}
+
+.product-list {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 3rem;
+border-style: solid;
+border-radius: 30px;
+border-color: #dddddd;
+flex-wrap: wrap;
+}
+
+.product img {
+width: 250px;
+max-width: 100%;
+height: auto;
+}
+
+.anuncio {
+position: fixed;
+top: 10px;
+right: 10px;
+background-color: #f1c40f;
+padding: 15px;
+border-radius: 5px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+z-index: 1000;
+cursor: default;
+}
+
+#cerrar {
+cursor: pointer;
+color: #e74c3c;
+font-weight: bold;
+float: right;
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Manrope:wght@200..800&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Kanit';
+}
+
+body {
+background-color: #e9e7e7;
+}
+
+header {
+background-color: #333;
+color: #ffffff;
+padding: 1rem;
+text-align: center;
+}
+
+nav ul {
+display: flex;
+justify-content: center;
+align-items: center;
+list-style: none;
+gap: 50px ;
+}
+    
+a {
+color: #ffffff;
+text-decoration: none;
+}
+
+main {
+padding: 2rem;
+}
+
+.product {
+border: 2px solid #cccccc;
+border-radius: 5px;
+padding: 1rem;
+margin: 1rem 0;
+background-color: #ffffff;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+max-width: min-content;
+}
+
+.product-list {
+display: flex;
+gap: 3rem;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.product img {
+width: 250px;
+height: auto;
+margin-bottom: 1rem;
+}
+
+.product h2, .product p {
+margin-bottom: 1rem ;
+}
+
+
+.product .price {
+font-weight: bold;
+color: #333;
+}
+
+.product button {
+background-color: #333;
+color: #ffffff;
+border: none;
+padding: 0.5rem 1rem;
+cursor: pointer;
+width: 130px;
+}
+
+.product button:hover {
+background-color: #555;
+}

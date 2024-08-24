@@ -12,7 +12,7 @@ background-color: #e9e7e7;
 }
 
 header {
-background-color: #333;
+background-color: #793a0d;
 color: #ffffff;
 padding: 1rem;
 text-align: center;
@@ -67,11 +67,11 @@ margin-bottom: 1rem ;
 
 .product .price {
 font-weight: bold;
-color: #333;
+color: #4CAF50;
 }
 
 .product button {
-background-color: #333;
+background-color: #0f0f0f;
 color: #ffffff;
 border: none;
 padding: 0.5rem 1rem;
@@ -80,5 +80,30 @@ width: 130px;
 }
 
 .product button:hover {
-background-color: #555;
+background-color: #202020;
+}
+
+.anuncio {
+position: fixed;
+top: 10px;
+right: 10px;
+background-color: #ce8327;
+padding: 15px;
+border-radius: 5px;
+box-shadow: 0 0 10px #0000001a;
+z-index: 1000;
+cursor: default;
+}
+    
+.anuncio img {
+height: 200px;
+width: 100%;
+}
+
+.cerrar {
+cursor: pointer;
+color: #e74c3c;
+font-weight: 900;
+font-size:larger;
+float: right;
 }

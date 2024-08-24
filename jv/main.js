@@ -22,21 +22,30 @@ products.forEach(product => {
     productList.append(productDiv)
 })
 
-let closeAd = document.querySelector('#cerrar')
+
 let ad = document.querySelector('.anuncio')
-
-
-closeAd.addEventListener('click', function() {
-    ad.style.display = 'none'
-});
-
 
 fetch(url)
 .then(resp => resp.json())
 .then(data => {
     // console.log(data)
     // console.log(data[0]);
+    let datos = `<img src="${data[0].ad}" alt="Comida en Venta">`
+    // console.log(datos);
+    ad.innerHTML = datos
+})
+.then(data => {
+    const publicidad = document.createElement('p')
+    publicidad.innerText = 'Disfruta las Mejor Comida Aqui!!'
+    ad.append(publicidad)
 
+    const closeAd = document.createElement('span')
+    closeAd.classList.add('cerrar')
+    closeAd.innerHTML = `<p>X</p>`
+    ad.append(closeAd)
+
+    closeAd.addEventListener('click', function() {
+        ad.style.display = 'none'
+    });
 })
 .catch(err => console.error(err))
-

@@ -1,3 +1,6 @@
+
+let url = `https://66a99e36613eced4eba5b96f.mockapi.io/Anuncios`
+
 const products = [
     { id: 1, name: 'Pava Electrica', description: 'Pava Eléctrica Smartlife 2200W 1,5Lts', price: 350.00, image: '../assets/Pava-Electrica.jpg' },
     { id: 2, name: 'Microondas', description: 'HORNO DE MICROONDAS AMANA RCS10TS', price: 400.00, image: '../assets/Microondas.jfif' },
@@ -16,7 +19,7 @@ const products = [
 ];
 
 
-function generateProductHTML(product) {
+function generarProductosHTML(product) {
     return `
         <div class="product">
             <img src="${product.image}" alt="${product.name}">
@@ -30,16 +33,52 @@ function generateProductHTML(product) {
 
 
 function addToCart(productName) {
-    alert(productName + ' añadido al carrito');
-    // libreria SweetAlert para mas adelante
+    // alert(productName + ' añadido al carrito');
+    Swal.fire({                
+        icon: 'success',                
+        title: 'Gracias por tu Compra',                
+        text: `${productName} ha sido agregado a tu carrito`,                                
+        timer: 3000,
+        timerProgressBar: true,
+        showConfirmButton: false
+    });
 }
+ 
 
 
-function displayProducts() {
+function mostrarProductos() {
     const productList = document.querySelector('.product-list');
     products.forEach(product => {
-        productList.innerHTML += generateProductHTML(product);
+        productList.innerHTML += generarProductosHTML(product);
     });
 }
 
-displayProducts();
+mostrarProductos();
+
+
+let ad = document.querySelector('.anuncio')
+
+fetch(url)
+.then(resp => resp.json())
+.then(data => {
+    // console.log(data)
+    // console.log(data[0]);
+    let datos = `<img src="${data[0].ad}" alt="Comida en Venta">`
+    // console.log(datos);
+    ad.innerHTML = datos
+})
+.then(data => {
+    const publicidad = document.createElement('p')
+    publicidad.innerText = 'Disfruta las Mejor Comida Aqui!!'
+    ad.append(publicidad)
+
+    const closeAd = document.createElement('span')
+    closeAd.classList.add('cerrar')
+    closeAd.innerHTML = `<p>X</p>`
+    ad.append(closeAd)
+
+    closeAd.addEventListener('click', function() {
+        ad.style.display = 'none'
+    });
+})
+.catch(err => console.error(err))
